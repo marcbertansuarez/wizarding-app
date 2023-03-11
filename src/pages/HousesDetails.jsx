@@ -31,13 +31,15 @@ const HouseDetails = () => {
            <h2>Founded by: {house.founder}</h2>
            <p>Colors: {house.houseColours}</p>
            <p>Element: {house.element} | Animal: {house.animal}</p>
-           <p>Traits of Student: {house.traits.map(elem => {
+           <p>Traits of Student:</p> 
+           <ul>
+           {house.traits.map(elem => {
+
             return (
-                <ul>
-                    <li>{elem.name}</li>
-                </ul>
+                    <li key={elem.id}>{elem.name}</li>   
             )
-           })}</p>
+           })}
+           </ul>
            </div>}
            {error && <h1>Not found</h1>}         
         </div>
